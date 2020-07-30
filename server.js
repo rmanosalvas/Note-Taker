@@ -10,11 +10,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Pointing our server to a series of "route" files
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+// require("./routes/apiRoutes")(app);
+// require("./routes/htmlRoutes")(app);
 
 // Activating our server
 app.listen(PORT, function() {
     console.log("App listening on PORT: " + PORT);
   });
   
+
+  // need to create a home page!!
