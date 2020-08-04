@@ -1,4 +1,6 @@
-// Setting up our npm package to set up our server
+// Setting up our npm package and to set up our server
+var path = require("path");
+var fs = require("fs");
 var express = require("express");
 var app = express();
 
@@ -11,12 +13,9 @@ app.use(express.json());
 
 // Pointing our server to a series of "route" files
 // require("./routes/apiRoutes")(app);
-// require("./routes/htmlRoutes")(app);
+require("./routes/routes")(app);
 
 // Activating our server
 app.listen(PORT, function() {
     console.log("App listening on PORT: " + PORT);
   });
-  
-
-  // need to create a home page!!
