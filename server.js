@@ -1,6 +1,4 @@
 // Setting up our npm package and to set up our server
-var path = require("path");
-var fs = require("fs");
 var express = require("express");
 var app = express();
 
@@ -8,12 +6,14 @@ var app = express();
 var PORT = process.env.PORT || 8080;
 
 // Sets up the Express app to handle data parsing
+app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Pointing our server to a series of "route" files
 // require("./routes/apiRoutes")(app);
-require("./routes/routes")(app);
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
 
 // Activating our server
 app.listen(PORT, function() {
